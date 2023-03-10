@@ -5,14 +5,37 @@
 # Ввод: 7 2 5
 # Вывод: 7 9 11 13 15
 
-def arifm_progresia(first_num, razn, n):
-    list1 = []
-    for i in range(1, n+1):
-        list1.append(first_num + (i - 1) * razn)
-    return list1
+# def arifm_progresia(first_num, razn, n):
+#     list1 = []
+#     for i in range(1, n+1):
+#         list1.append(first_num + (i - 1) * razn)
+#     return list1
 
-first = int(input("Введите 1-ый элемент: "))
-d = int(input("Введите разность d: "))
-n1 = int(input("Введите кол-во элементов N: "))
+# first = int(input("Введите 1-ый элемент: "))
+# d = int(input("Введите разность d: "))
+# n1 = int(input("Введите кол-во элементов N: "))
 
-print(arifm_progresia(first, d, n1))
+# print(arifm_progresia(first, d, n1))
+
+
+# Задача 32: Определить индексы элементов массива (списка),
+# значения которых принадлежат заданному диапазону (т.е. не
+# меньше заданного минимума и не больше заданного
+# максимума)
+# Ввод: [-5, 9, 0, 3, -1, -2, 1, 4, -2, 10, 2, 0, -9, 8, 10, -9, 0, -5, -5, 7]
+# Вывод: [1, 9, 13, 14, 19]
+# А максимум и мин где? Видимо мин = 5, а максимум  больше или равно 10.
+
+list1 = [-5, 9, 0, 3, -1, -2, 1, 4, -2, 10, 2, 0, -9, 8, 10, -9, 0, -5, -5, 7]
+
+def ind(min1, max1, array1):
+    ind_array1 = []
+    for i in range(len(array1)):
+        if min1 < array1[i] < max1:
+            ind_array1.append(i)
+    return ind_array1
+
+min = int(input("Введите min: "))
+max = int(input("Введите max: "))
+
+print(ind(min, max, list1))
